@@ -4,11 +4,14 @@
 
 #include <stdio.h>
 
+
 /**
  * main - prints if number is positive, zero or negative
  * Retrun: Always (Success)
  */
+
 int main(void)
+
 {
 	int n;
 	
