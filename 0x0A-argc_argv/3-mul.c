@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _atoi - convers a string to an integer
+ * _atoi - converts a string to an integer
  * @s: string to be converted
  *
  * Return: the in converted from the string
@@ -42,6 +42,7 @@ int _atoi(char *s)
 
 	if (f == 0)
 		return (0);
+
 	return (n);
 }
 
@@ -69,3 +70,4 @@ int main(int argc, char *argv[])
 	printf("%d\n", result);
 
 	return (0);
+}
