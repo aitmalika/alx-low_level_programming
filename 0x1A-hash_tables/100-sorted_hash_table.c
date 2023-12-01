@@ -1,8 +1,3 @@
-/*
- * File: 100-sorted_hash_table.c
- * Auth: malika
- */
-
 #include "hash_tables.h"
 
 shash_table_t *shash_table_create(unsigned long int size);
@@ -13,11 +8,11 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
 /**
- * shash_table_create - Create a sorted hash table
- * @size: This size of new sorted hash table
+ * shash_table_create - Creates a sorted hash table.
+ * @size: The size of new sorted hash table.
  *
- * Return: If an Error occur - NULL
- *         Otherwise - a pointer to this new sorted hash tables
+ * Return: If an error occurs - NULL.
+ *         Otherwise - a pointer to the new sorted hash table.
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
@@ -41,13 +36,13 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * shash_table_set - Add an element to a sorted hash table
- * @ht: a pointer to this sorted hash table
- * @key: This key to add - cannot be an empty string
- * @value: This value associated with key
+ * shash_table_set - Adds an element to a sorted hash table.
+ * @ht: A pointer to the sorted hash table.
+ * @key: The key to add - cannot be an empty string.
+ * @value: The value associated with key.
  *
- * Return: Upon failures - 0.
- *         Otherwises - 1.
+ * Return: Upon failure - 0.
+ *         Otherwise - 1.
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
@@ -124,13 +119,13 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * shash_table_get - Retrive this value associated with
- *                   a key in a sorted hash tables
- * @ht: A pointer to this sorted hash table
- * @key: The key to get this value of
+ * shash_table_get - Retrieve this value associated with
+ *                   a key in a sorted hash table.
+ * @ht: A pointer to this sorted hash table.
+ * @key: The key to get the value of.
  *
  * Return: If this key cannot be matched - NULL
- *         Otherwise - this value associate with key
+ *         Otherwise - this value associated with key in ht
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
@@ -152,8 +147,8 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
- * shash_table_print - Print a sorted hash table in this order
- * @ht: A pointer to this sorted hash table
+ * shash_table_print - Prints a sorted hash table in order.
+ * @ht: A pointer to the sorted hash table.
  */
 void shash_table_print(const shash_table_t *ht)
 {
@@ -175,8 +170,8 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print_rev - Print a sorted hash this table in reverse order
- * @ht: A pointer to this sorted hash table to this print
+ * shash_table_print_rev - Prins a sorted hash table in reverse order.
+ * @ht: A pointer to this isorted hash table to print
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
@@ -198,8 +193,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * shash_table_delete - delete the sorted hash table
- * @ht: A pointer to this sorted hash table
+ * shash_table_delete - delets a sorted hash table.
+ * @ht: A pointer to this sorted hash table.
  */
 void shash_table_delete(shash_table_t *ht)
 {

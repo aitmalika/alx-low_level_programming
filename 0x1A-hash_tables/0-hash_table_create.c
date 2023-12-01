@@ -1,16 +1,11 @@
-/*
- * File: 0-hash_table_create.c
- * Auth: malika
- */
-
 #include "hash_tables.h"
 
 /**
- * hash_table_create - Create a this hash table
- * @size: The size of this array
+ * hash_table_create - Create this hash tables
+ * @size: the size of this array
  *
- * Return: If an error ocurs - NULL
- *         Otherwise - a pointer to this new hash table
+ * Return: If an error occur - NULL
+ *         Other wise - a pointer to this new hash table
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {

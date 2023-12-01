@@ -1,18 +1,13 @@
-/*
- * File: 3-hash_table_set.c
- * Auth: malika
-*/
-
 #include "hash_tables.h"
 
 /**
- * hash_table_set - Add or update an element in this hash table
+ * hash_table_set - Add or update an the element in a hash table
  * @ht: A pointer to this hash table
  * @key: This key to add - cannot be an empty string
- * @value: the value associated with this key
+ * @value: This value associated with key
  *
  * Return: upon failures - 0.
- *         Otherwis - 1.
+ *         Other wise - 1.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {

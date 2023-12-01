@@ -1,18 +1,13 @@
-/*
- * File: 4-hash_table_get.c
- * Auth: malika
-*/
-
 #include "hash_tables.h"
 
 /**
- * hash_table_get - Retrive this value associated with
- *                  a key in a hash tables
+ * hash_table_get - Retrieve this value associated with
+ *                  a key in a hash table
  * @ht: A pointer to this hash table
- * @key: This key to get this value of
+ * @key: The key to get this value of
  *
  * Return: If this key cannot be matched - NULL
- *         Otherwise - this value associated with this key
+ *         Other wise - this value associated with key
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
