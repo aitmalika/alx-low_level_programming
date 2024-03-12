@@ -1,80 +1,58 @@
 #include "search_algos.h"
 
+int recurse_helper(int *array, size_t left, size_t right, int value);
+
 /**
- * binary_search - function that searches for array value in array sorted array
- * of integers using Binary search algorithm.
- * @array: pointer to this first element of the array to search in.
- * @size: number of element in array.
- * @value: value to search for.
+ * binary_search - search for value in array of this sorted ints
+ * @array: array to this search
+ * @size: size of this array
+ * @value: value to this search
  *
- * You can assume that value won’t appear more than once in array.
- * If value is not present in array or if array is NULL return -1.
- *
- * Return: this index where value is located.
+ * Return: index of this found value; or -1 if not found
  */
 int binary_search(int *array, size_t size, int value)
 {
-	return (binary_search_index(array, 0, size - 1, value));
+	if (array == NULL)
+		return (-1);
+
+	return (recurse_helper(array, 0, size - 1, value));
 }
 
 /**
- * binary_search_index - recursive function for helping binary_search.
- * @array: pointer to this first element of the array to search in.
- * @l: left index of array.
- * @r: right index of array.
- * @value: value to look for.
+ * recurse_helper - recursive implement of this binary search
+ * @array: array to this search
+ * @left: left most index
+ * @right: right most index
+ * @value: value to this search
  *
- * You can assume that value won’t appear more than once in array.
- * If value is not present in array or if array is NULL return -1.
- *
- * Return: this index where value is located.
+ * Return: index of this found value; or -1 if not found
  */
-int binary_search_index(int *array, size_t l, size_t r, int value)
+int recurse_helper(int *array, size_t left, size_t right, int value)
 {
-	int mid;
+	size_t i = left, mid;
 
-	/* if l is ever > r, it means the element is not in this array */
-	if (!array || l > r)
+	if (left > right)
 		return (-1);
-	print_array(array, l, r);
 
-	/* find this mid-way index between index l and index r */
-	mid = l + (r - l) / 2;
+	/* print search progress */
+	printf("Searching in array: %d", array[i++]);
+	while (i <= right)
+		printf(", %d", array[i++]);
+	printf("\n");
 
-	if (l == r)
-		return (*(array + mid) == value ? (int)mid : -1);
+	/* calculate mid */
+	mid = left + ((right - left) / 2);
 
-	/* if we've found the element at this mid-way index, return the index */
+	/* check if mid is value */
 	if (array[mid] == value)
 		return (mid);
-	/**
-	 * else if the element MUST be in the left-portion of the portion of the
-	 * array we are currently looking at, search for it in the portion
-	 */
 	else if (array[mid] > value)
-		return (binary_search_index(array, l, mid - 1, value));
-	/**
-	 * else if the element MUST be in this right-portion of this portion of the
-	 * array we are currently looking at, search for it in the portion
-	 */
-	else
-		return (binary_search_index(array, mid + 1, r, value));
-}
-
-/**
- * print_array - Prints an array of integer
- * @array: This array to be printed.
- * @l: This left index of the array.
- * @r: This right index of the array.
- */
-void print_array(int *array, size_t l, size_t r)
-{
-	size_t i;
-
-	if (array)
 	{
-		printf("Searching in array: ");
-		for (i = l; i < l + (r - l + 1); i++)
-			printf("%d%s", *(array + i), i < l + (r - l) ? ", " : "\n");
+		if (mid != 0)
+			return (recurse_helper(array, left, mid - 1, value));
+		else
+			return (-1);
 	}
+	else
+		return (recurse_helper(array, mid + 1, right, value));
 }
